@@ -1,0 +1,21 @@
+.footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 60px;
+
+  background-color: rgb(245, 188, 83);
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+  background-color: yellow;
+}

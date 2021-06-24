@@ -1,0 +1,28 @@
+.top_box {
+  position: absolute;
+  width: 414px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+
+  background: #c4c4c4;
+}
+
+.bottom_box {
+  display: flex;
+  justify-content: row;
+
+  position: absolute;
+  width: 414px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+
+  background: #c4c4c4;
+}
+
+.left_bottom_box,
+.center_bottom_box,
+.right_bottom_box {
+  background-color: yellow;
+}

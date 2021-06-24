@@ -1,0 +1,33 @@
+.closeButton {
+  position: fixed;
+  right: 5px;
+  bottom: 80px;
+  margin-left: 80%;
+  margin-bottom: 10%;
+}
+
+.header {
+  background-color: rgb(245, 188, 83);
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.button_design {
+  margin-left: 80%;
+  margin-bottom: 10%;
+  width: 50px;
+  position: fixed;
+  bottom: 80px;
+}
+
+.boardlist {
+  position: fixed;
+  bottom: 65px;
+  top: 75px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

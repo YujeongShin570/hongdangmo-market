@@ -1,0 +1,50 @@
+// @mixin flexCenter() {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.board {
+  position: relative;
+  display: flex;
+  justify-content: row;
+  width: 414px;
+  height: 150px;
+  // margin: 0% 38% 5% 38%;
+  margin-bottom: 5%;
+}
+
+.picture {
+  // background: url(image.png);
+  border-radius: 12px;
+  // z-index: 0;
+  padding: 7%;
+}
+
+.picture > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  // z-index: 0;
+}
+
+.contents {
+  // position: absolute;
+  width: 400px;
+  // height: 150px;
+  // top: 98px;
+  display: flex;
+  justify-content: row;
+  background: #c4c4c4;
+  border-radius: 16px;
+}
+
+.contents_info {
+  padding: 7%;
+}
+
+.row_dislpay {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12%;
+}
