@@ -3,45 +3,13 @@ import Write from "../../components/Write";
 import Footer from "../../components/Footer";
 import Detail from "../../components/Detail";
 import "./style.scss";
-import { useState } from "react";
-
-const inittestData = [
-  {
-    id: 1,
-    title: "맥북 프로 16인치",
-    category: "노트북",
-    time: 12,
-    money: 100000,
-    user: "회원 1",
-    imageLink:
-      "http://itimg.chosun.com/sitedata/image/202001/14/2020011400634_0.jpg",
-    detailText: "1번째 상품",
-  },
-  {
-    id: 2,
-    title: "책상",
-    category: "가구",
-    time: 3600,
-    money: 10000,
-    user: "회원 2",
-    imageLink:
-      "https://post-phinf.pstatic.net/MjAxOTA4MDRfMjA5/MDAxNTY0OTIyOTM3MjY3.Ryts0JnnstdfbRx29prDkImS-0j1J-Tuxf6Z6EtJnXcg.sWqSIpivylK5IMYltw62vwGSDD-T-rUmrZ51mDwxfAAg.PNG/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2019-08-04_%EC%98%A4%ED%9B%84_9.46.00.png?type=w1200",
-    detailText: "2번째 상품",
-  },
-  {
-    id: 3,
-    title: "축구공",
-    category: "스포츠",
-    time: 86400,
-    money: 0,
-    user: "회원 3",
-    imageLink: "http://image.auction.co.kr/itemimage/18/f3/b8/18f3b8bb76.jpg",
-    detailText: "3번째 상품",
-  },
-];
+import { useState, useEffect } from "react";
+import axios from "axios";
+import useApiCall from "../../hooks/useApiCall";
+import ApiCall from "../ApiCall";
 
 function Main() {
-  const [testData, setTestData] = useState(null);
+  // const [testData, setTestData] = useState([]);
   // const [testData, setTestData] = useState(inittestData);
   const [boardData, setBoardData] = useState(null);
   const [title, setTitle] = useState("");
@@ -63,14 +31,27 @@ function Main() {
     user,
     imageLink,
   };
+  const [loading, testData, error, fetchData] = useApiCall(
+    "http://localhost:4000/api/board"
+  );
+
+  if (testData === null) {
+    return <>에러입니다 </>;
+  }
+  if (loading === true) {
+    return <>로딩중입니다</>;
+  }
+  if (error !== null) {
+    return <>에러입니다</>;
+  }
   const BoardComponents = testData.map((boardData) => {
     return (
       <Board
-        key={boardData.id}
+        key={boardData._id}
         title={boardData.title}
         category={boardData.category}
         time={boardData.time}
-        money={boardData.money}
+        price={boardData.price}
         user={boardData.user}
         imageLink={boardData.imageLink}
         onClick={() => {
@@ -91,7 +72,7 @@ function Main() {
       ) : (
         <Detail
           boardData={boardData}
-          setTestData={setTestData}
+          setTestData={() => {}}
           setBoardData={setBoardData}
           setVisible={setVisible}
           inputState={inputStates}
@@ -101,20 +82,25 @@ function Main() {
       {/* <div className="boardlist">{BoardComponents}</div> */}
 
       <Footer buttonList={["홈", "검색", "내글"]} />
-      <button className="button_design" onClick={() => setVisible(true)}>
+      {/* <button className="button_design" onClick={() => setVisible(true)}>
         +
       </button>
       <button className="closeButton" onClick={() => setVisible(!visible)}>
         -
-      </button>
+      </button> */}
+      <button
+        className="open-button"
+        onClick={() => setVisible((state) => !state)}
+      ></button>
       {visible ? (
         <Write
           boardData={boardData}
-          setData={setTestData}
+          setData={() => {}}
           inputState={inputStates}
           setVisible={setVisible}
-          setTestData={setTestData}
+          setTestData={() => {}}
           setBoardData={setBoardData}
+          fetchData={fetchData}
         />
       ) : null}
       {/* <Detail  boardData={testData}/> */}

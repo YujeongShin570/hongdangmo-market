@@ -1,4 +1,4 @@
-const BoardModel = require('../../models/board');
+const BoardModel = require("../../models/board");
 exports.listBoard = async () => {
   try {
     const boards = await BoardModel.find({}).exec();
@@ -19,19 +19,47 @@ exports.getBoardById = async (boardId) => {
   }
 };
 
-exports.addBoard = async ({ boardId, title, content }) => {
+exports.addBoard = async ({
+  boardId,
+  title,
+  contents,
+  price,
+  category,
+  imageLink,
+}) => {
   try {
-    await BoardModel.create({ id: boardId, title, content }).exec();
+    await BoardModel.create({
+      id: boardId,
+      title,
+      contents,
+      price,
+      category,
+      imageLink,
+    });
   } catch (err) {
     console.error(err);
     return {};
   }
 };
 
-exports.updateBoard = async ({ boardId, title, content }) => {
+exports.updateBoard = async ({
+  boardId,
+  title,
+  contents,
+  price,
+  category,
+  imageLink,
+}) => {
   try {
     const query = { id: boardId };
-    await BoardModel.updateOne(query, { title, content }).exec();
+    await BoardModel.updateOne(query, {
+      title,
+      content,
+      contents,
+      price,
+      category,
+      imageLink,
+    }).exec();
   } catch (err) {
     console.error(err);
     return {};

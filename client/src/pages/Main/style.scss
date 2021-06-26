@@ -1,10 +1,10 @@
-.closeButton {
-  position: fixed;
-  right: 5px;
-  bottom: 80px;
-  margin-left: 80%;
-  margin-bottom: 10%;
-}
+// .closeButton {
+//   position: fixed;
+//   right: 5px;
+//   bottom: 80px;
+//   margin-left: 80%;
+//   margin-bottom: 10%;
+// }
 
 .header {
   background-color: rgb(245, 188, 83);
@@ -29,5 +29,22 @@
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.open-button {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bd420d;
+  &::before {
+    content: "+";
   }
 }

@@ -15,8 +15,8 @@ import ApiCall from "./pages/ApiCall";
 function App() {
   return (
     <div>
-      <ApiCall />
-      {/* <Main /> */}
+      {/* <ApiCall /> */}
+      <Main />
       {/* <Detail boardData={testData}/> */}
     </div>
   );

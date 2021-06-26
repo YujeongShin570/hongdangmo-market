@@ -22,6 +22,7 @@ function Detail({
       return newState;
     });
   };
+
   return (
     <div>
       <Board title={boardData.title} category={boardData.category} />
@@ -30,6 +31,7 @@ function Detail({
         <div>{boardData.detailText}</div>
         <div className="detail">
           <button onClick={() => setVisible(true)}>수정하기</button>
+          {/* <button onClick={updateBoardData}>수정하기</button> */}
           <button onClick={deleteBoardData}>삭제하기</button>
         </div>
       </div>

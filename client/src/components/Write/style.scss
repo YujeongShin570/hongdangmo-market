@@ -1,11 +1,46 @@
 .write {
   position: fixed;
-  left: 39%;
-  top: 30%;
-  & > div {
-    display: block;
+  // left: 39%;
+  // top: 30%;
+  left: calc(50% - 45%);
+  top: calc(50% - 40%);
+  width: 90%;
+  height: 80%;
+  // & > div {
+  //   display: block;
+  // }
+  background-color: #c4c4c4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgb(245, 188, 83);
+}
+
+.inputs-wrapper {
+  background-color: #d8b6b6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 20px;
+  & > button {
+    margin: 0 30px;
+    padding: 10px 20px;
+    font-size: 20px;
   }
-  background-color: rgb(245, 188, 83);
+  & > .green {
+    background-color: #52ff00;
+  }
+  & > .red {
+    background-color: #ec5aba;
+  }
 }
 
 body {
@@ -19,6 +54,7 @@ body {
 // }
 
 .item {
+  display: flex;
   position: relative;
   margin-top: 20px;
   margin-left: 40px;

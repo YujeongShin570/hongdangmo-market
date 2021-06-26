@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 const BoardSchema = new Schema({
   id: {
     type: Number,
@@ -6,9 +6,15 @@ const BoardSchema = new Schema({
   title: {
     type: String,
   },
-  content: {
+  contents: {
     type: String,
+  },
+  category: {
+    type: String,
+  },
+  price: {
+    type: Number,
   },
 });
 
-module.exports = model('board', BoardSchema);
+module.exports = model("board", BoardSchema);
