@@ -15,6 +15,9 @@ const BoardSchema = new Schema({
   price: {
     type: Number,
   },
+  imageLink: {
+    type: String,
+  },
 });
 
 module.exports = model("board", BoardSchema);

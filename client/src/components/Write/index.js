@@ -39,6 +39,7 @@ function Write({ setData, setBoardData, boardData, setVisible, fetchData }) {
     // const id = boardData._id;
     // if (boardData._id === id) {
     await axios.put("http://localhost:4000/api/board", {
+      _id: boardData._id,
       title,
       imageLink,
       category,

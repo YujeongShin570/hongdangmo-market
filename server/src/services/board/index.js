@@ -51,10 +51,9 @@ exports.updateBoard = async ({
   imageLink,
 }) => {
   try {
-    const query = { id: boardId };
+    const query = { _id: boardId };
     await BoardModel.updateOne(query, {
       title,
-      content,
       contents,
       price,
       category,

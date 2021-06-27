@@ -57,6 +57,7 @@ app.post("/api/board", async (req, res) => {
 });
 
 app.put("/api/board", async (req, res) => {
+  console.log(req.body._id);
   await updateBoard({
     boardId: req.body._id,
     title: req.body.title,
