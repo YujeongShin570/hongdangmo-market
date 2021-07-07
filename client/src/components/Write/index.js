@@ -50,23 +50,7 @@ function Write({ setData, setBoardData, boardData, setVisible, fetchData }) {
     setVisible(false);
     fetchData();
   };
-  // setData((state) => {
-  //   console.log(title, imageLink);
-  //   const id = boardData.id;
-  //   const newState = state.map((board) => {
-  //     if (board.id !== id) {
-  //       return board;
-  //     } else {
-  //       return {
-  //         id: id,
-  //         title: title,
-  //       };
-  //     }
-  //   });
-  // setBoardData(null);
-  // return newState;
 
-  // };
   if (boardData === null) {
     return (
       <div className="write">
