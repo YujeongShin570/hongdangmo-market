@@ -13,4 +13,4 @@ const getDBUri = () => {
   return localUri;
 };
 
-module.exports = { getDBUri }
+module.exports = { getDBUri };

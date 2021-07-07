@@ -1,6 +1,6 @@
 // import axios from "axios";
 // import { useState, useEffect } from "react";
-import useApiCall from "../../hooks/useApiCall";
+import useApiCall from '../../hooks/useApiCall';
 
 function ApiCall() {
   // const [loading, payload, error] = useApiCall(
@@ -24,22 +24,22 @@ function ApiCall() {
   //   };
   //   fetchData();
   // }, []);
-//   const [loading, payload, error] = useApiCall(
-//     `${process.env.REACT_APP_API_SERVER}/api/board'
-//   );
+  //   const [loading, payload, error] = useApiCall(
+  //     `${process.env.REACT_APP_API_SERVER}/api/board'
+  //   );
 
-//   if (loading === true) {
-//     return <div>로딩중입니다</div>;
-//   }
-//   if (error !== null) {
-//     return <div>에러입니다</div>;
-//   }
-//   return <div>{JSON.stringify(payload)}</div>;
-// }
+  //   if (loading === true) {
+  //     return <div>로딩중입니다</div>;
+  //   }
+  //   if (error !== null) {
+  //     return <div>에러입니다</div>;
+  //   }
+  //   return <div>{JSON.stringify(payload)}</div>;
+  // }
 
-// export default ApiCall;
+  // export default ApiCall;
   const [loading, payload, error] = useApiCall(
-    `${process.env.REACT_APP_API_SERVER}/api/board'
+    `${process.env.REACT_APP_API_SERVER}/api/board`
   );
 
   if (loading === true) {
